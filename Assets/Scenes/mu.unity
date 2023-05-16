@@ -155,10 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b879ff745258b6c42b412dbaa9d33eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {x: 3, y: 3, z: 3}
-  playTime: 0
-  front: 0
-  side: 0
+  spawnPoint: {x: 0, y: 0, z: 0}
+  tgPoint: {x: 0, y: 0, z: 0}
+  speed: 0
 --- !u!65 &286372006
 BoxCollider:
   m_ObjectHideFlags: 0

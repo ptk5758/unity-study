@@ -4,65 +4,44 @@ using UnityEngine;
 
 public class VectorStudyMu : VectorStudy
 {
-    public float playTime;
-    public float front;
-    public float side;
-    public float jump;
-    public float moveSpeed;
-    private void Start()
-    {
-        playTime = 0;
-        front = 0;
-        side = 0;
-        moveSpeed = 10f;
-    }
+    public Vector3 tgPoint;
+    public float speed;
+    Vector3 position1 = new Vector3(20, 1, 20);
+    Vector3 position2 = new Vector3(20, 1, 0);
+    Vector3 position3 = new Vector3(20, 1, -20);
+    Vector3 position4 = new Vector3(0, 1, 20);
+    Vector3 position5 = new Vector3(0, 1, -20);
+
     private void Update()
     {
-        playTime += Time.deltaTime;
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.Alpha1) && Input.GetKey(KeyCode.Space))
         {
-            front += Time.deltaTime;
-            this.transform.position = new Vector3(front, this.transform.position.y, 0);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, position1, speed);
         }
-        
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.Space))
         {
-            side += Time.deltaTime;
-            this.transform.position = new Vector3(this.transform.position.x, 0, side);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, position2, speed);
+
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.Space))
         {
-            front -= Time.deltaTime;
-            this.transform.position = new Vector3(front, this.transform.position.y, 0);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, position3, speed);
+
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.Alpha4) && Input.GetKey(KeyCode.Space))
         {
-            side -= Time.deltaTime;
-            this.transform.position = new Vector3(this.transform.position.x, 0, side);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, position4, speed);
+
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Alpha5) && Input.GetKey(KeyCode.Space))
         {
-            this.transform.position = new Vector3(this.transform.position.x, 1, this.transform.position.z);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, position5, speed);
+
         }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            this.transform.position = new Vector3(front, 0, side);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Debug.Log("기어1단");
-            moveSpeed = 10f;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Debug.Log("기어2단");
-            moveSpeed = 20f;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Debug.Log("기어3단");
-            moveSpeed = 30f;
-        }
-        this.transform.position = new Vector3(front*moveSpeed, this.transform.position.y, side*moveSpeed);
+        /*Vector3 position1 = new Vector3(20, 1, 20);
+        Vector3 position2 = new Vector3(20, 1, 0);
+        Vector3 position3 = new Vector3(20, 1, -20);
+        Vector3 position4 = new Vector3(0, 1, 20);
+        Vector3 position5 = new Vector3(0, 1, -20);*/
     }
 }
