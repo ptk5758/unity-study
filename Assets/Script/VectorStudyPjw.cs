@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class VectorStudyPjw : VectorStudy 
 {
-    
-    void Start()
+    float cubePosition, cubePosition1;
+     void Awake()
     {
-       //ector3 vec = new Vector3(0,0,0);
-        
-
-        //Vector3 vec = spawnPoint;
-        //transform.Translate(vec);
-
-
+        cubePosition = 0;
     }
-    void Update()
-    {
 
-        if (Input.GetButton("Horizontal"))
+     void Update()
+    {
+        if(Input.GetKey(KeyCode.A))
         {
-            Vector3 vec = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-            
-            transform.Translate(vec);
+            cubePosition += Time.deltaTime;
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.D))
         {
-            Vector3 vec = spawnPoint;
-            transform.Translate(vec);
+            cubePosition -= Time.deltaTime;
         }
+        if (Input.GetKey(KeyCode.W))
+        {
+            cubePosition1 += Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            cubePosition1-= Time.deltaTime;
+        }
+
+        this.transform.position = new Vector3(cubePosition, 0, cubePosition1);
 
     }
 
