@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class VectorStudyAsy : VectorStudy
 {
-    public float xyz;
+    public float x;
+    public float y;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,8 @@ public class VectorStudyAsy : VectorStudy
 
     private void Awake()
     {
-        xyz = 0;
+        x = 0;
+        y = 0;
     }
 
     // Update is called once per frame
@@ -27,23 +29,28 @@ public class VectorStudyAsy : VectorStudy
         //{
         //    this.transform.position = new Vector3(0,0,0);
         //}
+        this.transform.position = new Vector3(x,y,0);
 
-        if(Input.GetKeyDown(KeyCode.A)) 
+        if (Input.GetKey(KeyCode.A))
         {
-            xyz += Time.deltaTime;
-            this.transform.position = new Vector3(xyz, this.transform.position.y, this.transform.position.z);
+            x -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.D))
         {
-            xyz += Time.deltaTime;
-            this.transform.position = new Vector3(this.transform.position.x, xyz, this.transform.position.z);
+            x += Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.S))
         {
-            xyz += Time.deltaTime;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, xyz);
+            y -= Time.deltaTime;
         }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            y += Time.deltaTime;
+        }
+
+        
     }
 }
