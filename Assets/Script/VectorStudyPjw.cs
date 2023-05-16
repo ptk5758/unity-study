@@ -7,13 +7,30 @@ public class VectorStudyPjw : VectorStudy
     
     void Start()
     {
-        //Vector3 vec = new Vector3(2, 3, 3);
+       //ector3 vec = new Vector3(0,0,0);
+        
+
+        //Vector3 vec = spawnPoint;
         //transform.Translate(vec);
 
-        Vector3 vec = spawnPoint;
-        transform.Translate(vec);
+
+    }
+    void Update()
+    {
+
+        if (Input.GetButton("Horizontal"))
+        {
+            Vector3 vec = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+            
+            transform.Translate(vec);
+        }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Vector3 vec = spawnPoint;
+            transform.Translate(vec);
+        }
 
     }
 
-   
+
 }
