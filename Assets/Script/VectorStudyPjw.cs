@@ -7,8 +7,12 @@ public class VectorStudyPjw : VectorStudy
     
     void Start()
     {
-        Vector3 vec = new Vector3(2, 3, 3);
+        //Vector3 vec = new Vector3(2, 3, 3);
+        //transform.Translate(vec);
+
+        Vector3 vec = spawnPoint;
         transform.Translate(vec);
+
     }
 
    
