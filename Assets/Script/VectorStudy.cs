@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class VectorStudy : MonoBehaviour
 {
-    public Vector3 spawnPoint = new Vector3(3,3,3);    
+    public Vector3 spawnPoint = new Vector3(3,3,3);
 }
