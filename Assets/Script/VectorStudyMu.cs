@@ -8,16 +8,17 @@ public class VectorStudyMu : VectorStudy
     public float front;
     public float side;
     public float jump;
+    public float moveSpeed;
     private void Start()
     {
         playTime = 0;
         front = 0;
         side = 0;
+        moveSpeed = 10f;
     }
     private void Update()
     {
         playTime += Time.deltaTime;
-        Debug.Log(Time.deltaTime);
         if (Input.GetKey(KeyCode.W))
         {
             front += Time.deltaTime;
@@ -47,6 +48,21 @@ public class VectorStudyMu : VectorStudy
         {
             this.transform.position = new Vector3(front, 0, side);
         }
-        this.transform.position = new Vector3(front, this.transform.position.y, side);
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("기어1단");
+            moveSpeed = 10f;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Debug.Log("기어2단");
+            moveSpeed = 20f;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Debug.Log("기어3단");
+            moveSpeed = 30f;
+        }
+        this.transform.position = new Vector3(front*moveSpeed, this.transform.position.y, side*moveSpeed);
     }
 }
