@@ -7,7 +7,7 @@ public class VectorStudyAsy : VectorStudy
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.position = new Vector3(1, 1, 1);
+        this.transform.position = spanwPoint;
     }
 
     // Update is called once per frame
