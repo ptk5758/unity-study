@@ -6,7 +6,7 @@ public class VectorStudyMu : VectorStudy
 {
     private void Start()
     {
-        this.transform.position = new Vector3(3, 3, 3);
+        this.transform.position = spawnPoint;
         
     }
 }
