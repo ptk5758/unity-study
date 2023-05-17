@@ -1,49 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class VectorStudyAsy : VectorStudy
 {
-    public float xyz;
-    // Start is called before the first frame update
+    //public float x;
+    //public float y;
+    //public Vector3 target;
+    public float speed;
+
+    public Vector3 target1;
+    public Vector3 target2;
+    public Vector3 target3;
+    public Vector3 target4;
+    public Vector3 target5;
+
     void Start()
     {
-        //this.transform.position = spawnPoint;
+        
     }
 
     private void Awake()
     {
-        xyz = 0;
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.G))
-        //{
-        //    this.transform.position = spawnPoint;
-        //}
-        //if (Input.GetKeyUp(KeyCode.G))
-        //{
-        //    this.transform.position = new Vector3(0,0,0);
-        //}
 
-        if(Input.GetKeyDown(KeyCode.A)) 
+        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.Alpha1))
         {
-            xyz += Time.deltaTime;
-            this.transform.position = new Vector3(xyz, this.transform.position.y, this.transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, target1, speed);
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.Alpha2))
         {
-            xyz += Time.deltaTime;
-            this.transform.position = new Vector3(this.transform.position.x, xyz, this.transform.position.z);
+            this.transform.position = Vector3.MoveTowards(transform.position, target2, speed);
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.Alpha3))
         {
-            xyz += Time.deltaTime;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, xyz);
+            this.transform.position = Vector3.MoveTowards(transform.position, target3, speed);
         }
+
+        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.Alpha4))
+        {
+            this.transform.position = Vector3.MoveTowards(transform.position, target4, speed);
+        }
+
+        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.Alpha5))
+        {
+            this.transform.position = Vector3.MoveTowards(transform.position, target5, speed);
+        }
+
     }
 }
