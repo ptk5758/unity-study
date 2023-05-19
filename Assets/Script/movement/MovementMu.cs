@@ -7,14 +7,16 @@ using static UnityEngine.GraphicsBuffer;
 
 public class MovementMu : MoveMent
 {
-    
+    /* MoveMent 에서 선언된것
+    public Vector3[] spawnPoint; 이걸 쓰는게 중요한데
+    public float positionX; 
+    public float positionZ;
+    public float speed;
+    */ 
 
-    private void setSpawnpoint()
-    {
-        spawnPoint = new Vector3[4];
-    }
     private void Start()
     {
+        spawnPoint = new Vector3[4];
         positionX = 0;
         positionZ = 0;
         speed = 5.0f;
@@ -33,7 +35,6 @@ public class MovementMu : MoveMent
             positionX -= Time.deltaTime;
             this.transform.position = new Vector3(positionX, this.transform.position.y, 0);
         }
-
         if (Input.GetKey(KeyCode.A))
         {
             positionZ += Time.deltaTime;
@@ -51,44 +52,61 @@ public class MovementMu : MoveMent
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                spawnPoint(0);
+                spawnPoint[0] = this.transform.position;
+                Debug.Log("1번에 좌표 " + spawnPoint[0] + "가 저장되었습니다.");
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                spawnPoint(1);
+                spawnPoint[1] = this.transform.position;
+                Debug.Log("2번에 좌표 " + spawnPoint[1] + "가 저장되었습니다.");
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                spawnPoint(2);
+                spawnPoint[2] = this.transform.position;
+                Debug.Log("3번에 좌표 " + spawnPoint[2] + "가 저장되었습니다.");
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                spawnPoint(3);
+                spawnPoint[3] = this.transform.position;
+                Debug.Log("4번에 좌표 " + spawnPoint[3] + "가 저장되었습니다.");
             }
         }
 
-        // 숫자키 누르고 저장된 포지션으로 이동
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        // 좌표 저장된 값 확인하는거
+
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            transform.position = Vector3.MoveTowards(transform.position, spawnPoint(0), speed * Time.deltaTime);
+            Debug.Log("1번 좌표는 " + spawnPoint[0] + "입니다.");
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Debug.Log("2번 좌표는 " + spawnPoint[1] + "입니다.");
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Debug.Log("3번 좌표는 " + spawnPoint[2] + "입니다.");
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Debug.Log("4번 좌표는 " + spawnPoint[3] + "입니다.");
+        }
+
+        // 숫자키 누르고 저장된 포지션으로 이동
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            this.transform.position = spawnPoint[0];
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            transform.position = Vector3.MoveTowards(transform.position, spawnPoint(1), speed * Time.deltaTime);
+            this.transform.position = spawnPoint[1];
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyUp(KeyCode.Alpha3))
         {
-            transform.position = Vector3.MoveTowards(transform.position, spawnPoint(2), speed * Time.deltaTime);
+            this.transform.position = spawnPoint[2];
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKey(KeyCode.Alpha4))
         {
-            transform.position = Vector3.MoveTowards(transform.position, spawnPoint(3), speed * Time.deltaTime);
-        }
+            this.transform.position = spawnPoint[3];
+        }        
     }
 }
-// 현재위치, 목표위치, 속도
-// transform.position = Vector3.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
-// transform.position = Vector3.MoveTowards(transform.position, spawnPoint(0), Speed * Time.deltaTime);
-// transform.position = Vector3.MoveTowards(transform.position, spawnPoint(1), Speed * Time.deltaTime);
-// transform.position = Vector3.MoveTowards(transform.position, spawnPoint(2), Speed * Time.deltaTime);
-// transform.position = Vector3.MoveTowards(transform.position, spawnPoint(3), Speed * Time.deltaTime);
