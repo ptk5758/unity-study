@@ -126,7 +126,7 @@ public class MovementMu : MoveMent
             Debug.Log("4번 좌표는 " + spawnPoint[3] + "입니다.");
         }
 
-        /* 저장된 포지션으로 이동해야하는데 수정해야하는 부분
+        /* 저장된 포지션으로 이동해야 하는데 수정해야하는 부분
         if (Input.GetKey(KeyCode.Alpha1))
         {
             this.transform.position = spawnPoint[0];
