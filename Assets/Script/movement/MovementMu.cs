@@ -46,30 +46,66 @@ public class MovementMu : MoveMent
             this.transform.position = new Vector3(this.transform.position.x, 0, positionZ);
         }
         this.transform.position = new Vector3(positionX * speed, this.transform.position.y, positionZ * speed);
-        
+
         // 위치저장
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            spawnPoint[0] = this.transform.position;
-            Debug.Log("1번에 좌표 " + spawnPoint[0] + "가 저장되었습니다.");
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                spawnPoint[0] = this.transform.position;
+                Debug.Log("1번에 좌표 " + spawnPoint[0] + "가 저장되었습니다.");
+            }
+            else
+            {
+                positionX = spawnPoint[0].x;
+                positionZ = spawnPoint[0].z;
+                this.transform.position = new Vector3(positionX, this.transform.position.y, positionZ);
+            }
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            spawnPoint[1] = this.transform.position;
-            Debug.Log("2번에 좌표 " + spawnPoint[1] + "가 저장되었습니다.");
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                spawnPoint[1] = this.transform.position;
+                Debug.Log("2번에 좌표 " + spawnPoint[1] + "가 저장되었습니다.");
+            }
+            else
+            {
+                positionX = spawnPoint[1].x;
+                positionZ = spawnPoint[1].z;
+                this.transform.position = new Vector3(positionX, this.transform.position.y, positionZ);
+            }
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            spawnPoint[2] = this.transform.position;
-            Debug.Log("3번에 좌표 " + spawnPoint[2] + "가 저장되었습니다.");
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                spawnPoint[2] = this.transform.position;
+                Debug.Log("3번에 좌표 " + spawnPoint[2] + "가 저장되었습니다.");
+            }
+            else
+            {
+                positionX = spawnPoint[2].x;
+                positionZ = spawnPoint[2].z;
+                this.transform.position = new Vector3(positionX, this.transform.position.y, positionZ);
+            }
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            spawnPoint[3] = this.transform.position;
-            Debug.Log("4번에 좌표 " + spawnPoint[3] + "가 저장되었습니다.");
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                spawnPoint[3] = this.transform.position;
+                Debug.Log("4번에 좌표 " + spawnPoint[3] + "가 저장되었습니다.");
+            }
+            else
+            {
+                positionX = spawnPoint[3].x;
+                positionZ = spawnPoint[3].z;
+                this.transform.position = new Vector3(positionX, this.transform.position.y, positionZ);
+            }
         }
-        
+
 
         // 좌표 저장된 값 확인하는거
 
@@ -109,7 +145,7 @@ public class MovementMu : MoveMent
         }
         */
 
-        // 이걸로 가야댐
+        /* 이걸로 가야댐
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             positionX = spawnPoint[0].x;
@@ -134,6 +170,6 @@ public class MovementMu : MoveMent
             positionZ = spawnPoint[3].z;
             this.transform.position = new Vector3(positionX, this.transform.position.y, positionZ);
         }
-
+        */
     }
 }
