@@ -57,6 +57,8 @@ public class Movementasy : MoveMent
                 spawnPoint[0] = this.transform.position;
             }
             this.transform.position = Vector3.MoveTowards(this.transform.position, spawnPoint[0], speed);
+            positionX = spawnPoint[0].x;
+            positionZ = spawnPoint[0].z;
         }
 
         if (Input.GetKey(KeyCode.Alpha2))
@@ -66,6 +68,8 @@ public class Movementasy : MoveMent
                 spawnPoint[1] = this.transform.position;
             }
             this.transform.position = Vector3.MoveTowards(this.transform.position, spawnPoint[1], speed);
+            positionX = spawnPoint[1].x;
+            positionZ = spawnPoint[1].z;
         }
 
         if (Input.GetKey(KeyCode.Alpha3))
@@ -75,6 +79,8 @@ public class Movementasy : MoveMent
                 spawnPoint[2] = this.transform.position;
             }
             this.transform.position = Vector3.MoveTowards(this.transform.position, spawnPoint[2], speed);
+            positionX = spawnPoint[2].x;
+            positionZ = spawnPoint[2].z;
         }
 
 
@@ -85,6 +91,8 @@ public class Movementasy : MoveMent
                 spawnPoint[3] = this.transform.position;
             }
             this.transform.position = Vector3.MoveTowards(this.transform.position, spawnPoint[3], speed);
+            positionX = spawnPoint[3].x;
+            positionZ = spawnPoint[3].z;
         }
 
 
