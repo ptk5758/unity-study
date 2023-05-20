@@ -27,7 +27,7 @@ public class MovementMu : MoveMent
         // WASD ¿Ãµø
         if (Input.GetKey(KeyCode.W))
         {
-            positionX += Time.deltaTime;
+            positionX += Time.deltaTime;  
             this.transform.position = new Vector3(positionX, this.transform.position.y, 0);
         }
         if (Input.GetKey(KeyCode.S))
