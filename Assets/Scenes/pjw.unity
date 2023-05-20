@@ -314,7 +314,6 @@ GameObject:
   - component: {fileID: 1353904573}
   - component: {fileID: 1353904572}
   - component: {fileID: 1353904571}
-  - component: {fileID: 1353904576}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -338,7 +337,7 @@ MonoBehaviour:
   targetPoint: {x: 0, y: 0, z: 0}
   positionX: 0
   positionZ: 0
-  speed: 5
+  speed: 10
 --- !u!65 &1353904572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -417,21 +416,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1353904576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353904570}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a34bee141016441448413c86279ee8ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {x: 3, y: 3, z: 3}
-  cubeSpeed: 3
-  target: {x: 10, y: 0, z: 8}
-  target1: {x: -3, y: 0, z: 4}
-  target2: {x: 8, y: 0, z: -2}
-  target3: {x: -1, y: 0, z: -1}
