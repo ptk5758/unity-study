@@ -19,7 +19,7 @@ public class MovementMu : MoveMent
         spawnPoint = new Vector3[4];
         positionX = 0;
         positionZ = 0;
-        speed = 5.0f;
+        speed = 0.01f; // 다음부턴 속도 신경쓰자 민욱아 이게 뭔 개 고생이니 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
     }
 
     void Update()
@@ -28,24 +28,26 @@ public class MovementMu : MoveMent
         if (Input.GetKey(KeyCode.W))
         {
             positionX += Time.deltaTime;
+            this.transform.position = new Vector3(positionX, this.transform.position.y, positionZ);
         }
         if (Input.GetKey(KeyCode.S))
         {
             positionX -= Time.deltaTime;
+            this.transform.position = new Vector3(positionX, this.transform.position.y, positionZ);
         }
         if (Input.GetKey(KeyCode.A))
         {
             positionZ += Time.deltaTime;
+            this.transform.position = new Vector3(positionX, this.transform.position.y, positionZ);
         }
         if (Input.GetKey(KeyCode.D))
         {
             positionZ -= Time.deltaTime;
+            this.transform.position = new Vector3(positionX, this.transform.position.y, positionZ);
         }
-        this.transform.position = new Vector3(positionX, this.transform.position.y, positionZ);
 
         // 위치저장 및 이동
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.Alpha1))
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -56,7 +58,7 @@ public class MovementMu : MoveMent
             positionZ = spawnPoint[0].z;
             this.transform.position = Vector3.MoveTowards(this.transform.position, spawnPoint[0], speed);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKey(KeyCode.Alpha2))
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -67,7 +69,7 @@ public class MovementMu : MoveMent
             positionZ = spawnPoint[1].z;
             this.transform.position = Vector3.MoveTowards(this.transform.position, spawnPoint[1], speed);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKey(KeyCode.Alpha3))
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -78,7 +80,7 @@ public class MovementMu : MoveMent
             positionZ = spawnPoint[2].z;
             this.transform.position = Vector3.MoveTowards(this.transform.position, spawnPoint[2], speed);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKey(KeyCode.Alpha4))
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -91,7 +93,6 @@ public class MovementMu : MoveMent
         }
 
         // 좌표 저장된 값 확인하는거
-
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Debug.Log("1번 좌표는 " + spawnPoint[0] + "입니다.");
