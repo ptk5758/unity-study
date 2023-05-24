@@ -5,20 +5,17 @@ using UnityEngine;
 public class RigidObjectPtk : RigidObject
 {
     Rigidbody rigid;
-    void Start()
-    {        
-        
-    }
+    public float count;
 
     private void Awake()
     {
-        this.rigid = this.transform.GetComponent<Rigidbody>();
-        Debug.Log(rigid.useGravity);
+        rigid = this.gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) rigid.useGravity = true;
+        count -= Time.deltaTime;
+        if (count <= 0) rigid.useGravity = true;
     }
 }
