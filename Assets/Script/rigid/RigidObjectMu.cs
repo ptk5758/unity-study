@@ -10,18 +10,33 @@ public class RigidObjectMu : RigidObject
     {
         this.rigid = this.transform.GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(delay(3f));            
-        }
-    }
-    private IEnumerator delay(float delayTime)
-    {
-        yield return new WaitForSeconds(delayTime);
-        rigid.useGravity = true;
+        float horizon = Input.GetAxisRaw("Horizontal");
+        float verti = Input.GetAxisRaw("Vertical");
+        Vector3 temp = new Vector3(horizon, 0, verti);
+        rigid.AddForce(temp);
     }
 }
+/*
+private void Awake()
+{
+    this.rigid = this.transform.GetComponent<Rigidbody>();
+}
+
+void Update()
+{
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+        if (rigid.useGravity == false)
+        {
+            StartCoroutine(delay(3f));
+        }
+    }
+}
+private IEnumerator delay(float delayTime)
+{
+    yield return new WaitForSeconds(delayTime);
+    rigid.useGravity = true;
+}
+*/
