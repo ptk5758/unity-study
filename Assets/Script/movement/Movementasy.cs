@@ -17,7 +17,6 @@ public class Movementasy : MoveMent
         positionX = 0;  //x 좌표 이동
         positionZ = 0;  //z 좌표 이동
         speed = 0.1f; //float형식이니까 f 붙여줘야함
-
     }
 
     
