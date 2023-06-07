@@ -7,7 +7,7 @@ public class MousePreview : MonoBehaviour
     public float turnSpeed = 4.0f; // 마우스 회전 속도
     public float moveSpeed = 5.0f; // 이동 속도
 
-    private float xRotate = 0.0f; // 내부 사용할 X축 회전량은 별도 정의 ( 카메라 위 아래 방향 )
+    public float xRotate = 0.0f; // 내부 사용할 X축 회전량은 별도 정의 ( 카메라 위 아래 방향 )
 
     void Update()
     {

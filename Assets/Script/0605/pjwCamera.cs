@@ -9,8 +9,8 @@ public class pjwCamera : MonoBehaviour
     public float positionZ;
     public float positionY;
     public float speed;
-    float xRotate, yRotate, xRotateMove, yRotateMove;
-    float rotateSpeed;
+    public static float xRotate, yRotate, xRotateMove, yRotateMove;
+    public static float rotateSpeed;
     void Awake()
     {
         //positionY를 카메라에 고정
