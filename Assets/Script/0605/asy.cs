@@ -13,6 +13,7 @@ public class asy : pjwCamera
     Material mat;
     float X, Y, Z;
     Vector3[] Point = new Vector3[1];
+    float turnSpeed = 5;
 
     void Start()
     {
