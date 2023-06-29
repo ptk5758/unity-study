@@ -31,12 +31,12 @@ public class asy : pjwCamera
     void MouseRotation()
     {
         // 좌우로 움직인 마우스의 이동량 * 속도에 따라 카메라가 좌우로 회전할 양 계산
-        float yRotateSize = Input.GetAxis("Mouse X") * turnSpeed;
+        float yRotateSize = Input.GetAxis("Mouse X") * rotateSpeed;
         // 현재 y축 회전값에 더한 새로운 회전각도 계산
         float yRotate = transform.eulerAngles.y + yRotateSize;
 
         // 위아래로 움직인 마우스의 이동량 * 속도에 따라 카메라가 회전할 양 계산(하늘, 바닥을 바라보는 동작)
-        float xRotateSize = -Input.GetAxis("Mouse Y") * turnSpeed;
+        float xRotateSize = -Input.GetAxis("Mouse Y") * rotateSpeed;
         // 위아래 회전량을 더해주지만 -45도 ~ 80도로 제한 (-45:하늘방향, 80:바닥방향)
         // Clamp 는 값의 범위를 제한하는 함수
         xRotate = Mathf.Clamp(xRotate + xRotateSize, -45, 80);
@@ -44,7 +44,7 @@ public class asy : pjwCamera
 
     void Update() 
     {
-        transform.rotation= Quaternion.Lerp(transform.rotation, Quaternion.Euler(xRotate,yRotate,0), turnSpeed);
+        transform.rotation= Quaternion.Lerp(transform.rotation, Quaternion.Euler(xRotate,yRotate,0), rotateSpeed);
 
         Point[0] = this.transform.position;
 
