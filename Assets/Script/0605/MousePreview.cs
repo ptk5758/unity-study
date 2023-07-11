@@ -37,11 +37,7 @@ public class MousePreview : MonoBehaviour
     void KeyboardMove()
     {
         // WASD 키 또는 화살표키의 이동량을 측정
-        Vector3 dir = new Vector3(
-            Input.GetAxis("Horizontal"),
-            0,
-            Input.GetAxis("Vertical")
-        );
+        Vector3 dir = new Vector3(Input.GetAxis("Horizontal"), 0 ,Input.GetAxis("Vertical"));
         // 이동방향 * 속도 * 프레임단위 시간을 곱해서 카메라의 트랜스폼을 이동
         transform.Translate(dir * moveSpeed * Time.deltaTime);
         {
