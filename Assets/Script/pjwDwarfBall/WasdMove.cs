@@ -11,10 +11,10 @@ public class WasdMove : MonoBehaviour
 
     private void Start()
     {
-        speed = 30;
-        positionX = 220;
-        positionY = 9;
-        positionZ = 216;
+        speed = 90;
+        positionX = -210;
+        positionY = 10;
+        positionZ = -210;
     }
     void Update()
     {
