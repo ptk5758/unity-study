@@ -1,0 +1,12 @@
+{
+    "name": "MinukBitch",
+    "age": 29,
+    "level": 3,
+    "isDead": true,
+    "items": [
+        "Book",
+        "Gold",
+        "Gun",
+        "Cap"
+    ]
+}
