@@ -15,7 +15,14 @@ public class RigidObjectPtk : RigidObject
     // Update is called once per frame
     void Update()
     {
-        count -= Time.deltaTime;
-        if (count <= 0) rigid.useGravity = true;
+        // Input.GetAxis // Input Manager 에 등록되어있는 Axis를 토대로 가져옴
+
+        // float temp = Input.GetAxis("Horizontal");
+        float horizon = Input.GetAxisRaw("Horizontal");
+        float verti = Input.GetAxisRaw("Vertical");
+        Vector3 temp = new Vector3(horizon, 0, verti);
+        rigid.AddForce(temp);
+        
+        
     }
 }

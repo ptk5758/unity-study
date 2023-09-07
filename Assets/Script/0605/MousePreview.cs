@@ -7,7 +7,7 @@ public class MousePreview : MonoBehaviour
     public float turnSpeed = 4.0f; // 마우스 회전 속도
     public float moveSpeed = 5.0f; // 이동 속도
 
-    private float xRotate = 0.0f; // 내부 사용할 X축 회전량은 별도 정의 ( 카메라 위 아래 방향 )
+    public float xRotate = 0.0f; // 내부 사용할 X축 회전량은 별도 정의 ( 카메라 위 아래 방향 )
 
     void Update()
     {
@@ -37,11 +37,7 @@ public class MousePreview : MonoBehaviour
     void KeyboardMove()
     {
         // WASD 키 또는 화살표키의 이동량을 측정
-        Vector3 dir = new Vector3(
-            Input.GetAxis("Horizontal"),
-            0,
-            Input.GetAxis("Vertical")
-        );
+        Vector3 dir = new Vector3(Input.GetAxis("Horizontal"), 0 ,Input.GetAxis("Vertical"));
         // 이동방향 * 속도 * 프레임단위 시간을 곱해서 카메라의 트랜스폼을 이동
         transform.Translate(dir * moveSpeed * Time.deltaTime);
         {
